@@ -31,17 +31,20 @@ To get a local copy up and running follow these steps.
 
    ```bash
    git clone https://github.com/yourusername/product-management-app.git
+   ```
 
 2. Navigate to the backend directory:
 
    ```bash
    cd product-management-app/ProductManagementApp.Web
+   ```
 
 3. Build and run the API:
 
    ```bash
    dotnet build
    dotnet run
+   ```
 
 4. The API will be hosted at https://localhost:7162 by default.
 
@@ -51,12 +54,14 @@ To get a local copy up and running follow these steps.
 
    ```bash
    cd product-management-app/ProductManagementApp.WebApp
+   ```
 
 2. Build and run the Blazor application:
 
    ```bash
    dotnet build
    dotnet run
+   ```
 
 3. Open your web browser and go to https://localhost:5291 to view the application.
 
@@ -82,6 +87,7 @@ Unit tests are included for backend functionality using NUnit. To run the tests:
    ```bash
    cd product-management-app/ProductManagementApp.Tests
    dotnet test
+   ```
 
 ## Contributing
 

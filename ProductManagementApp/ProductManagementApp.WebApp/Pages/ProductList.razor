@@ -1,0 +1,67 @@
+@page "/"
+@using ProductManagementApp.WebApp.Services
+@using ProductManagementApp.WebApp.Models
+@inject ProductService ProductService
+@inject NavigationManager NavigationManager
+
+<h3>Product List</h3>
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => EditProduct(product.Id)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteProduct(product.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Product> products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            products = await ProductService.GetProductsAsync();
+        }
+        catch (Exception ex)
+        {
+            // handle error
+        }
+    }
+
+    private void EditProduct(int id)
+    {
+        // navigate to edit page
+        NavigationManager.NavigateTo($"/products/edit/{id}");
+    }
+
+    private async Task DeleteProduct(int id)
+    {
+        await ProductService.DeleteProductAsync(id);
+        products = await ProductService.GetProductsAsync();
+    }
+}

@@ -77,7 +77,7 @@ To get a local copy up and running follow these steps.
 
 ### Frontend
 
-- Navigate to [https://localhost:5291][https://localhost:5291] to access the Blazor application.
+- Navigate to [https://localhost:5291](https://localhost:5291) to access the Blazor application.
 - Use the UI to perform CRUD operations on products.
 
 ## Testing
@@ -95,6 +95,6 @@ Contributions are welcome! Fork the repository, create a branch, make your chang
 
 ## License
 
-Distributed under the MIT License. See [LICENSE][LICENSE] for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 Project Link: [https://github.com/ephraimambingan/product-management-app](https://github.com/ephraimambingan/product-management-app)
